@@ -1,0 +1,46 @@
+@url = https://localhost:5001/api/commands
+
+###
+GET {{url}}
+
+###
+GET {{url}}/1
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+  "howTo": "Run a .NET Core app",
+  "line": "dotnet run",
+  "platform": ".NET Core CLI"
+}
+
+###
+PUT {{url}}/9
+Content-Type: application/json
+
+{
+  "howTo": "Create .gitignore files to untrack all dependencies and nuget packages",
+  "line": "dotnet new gitignore",
+  "platform": ".NET Core CLI"
+}
+
+###
+PATCH {{url}}/7
+Content-Type: application/json
+
+[
+  {
+    "op": "replace",
+    "path": "/line",
+    "value": "dotnet new sln"
+  }
+]
+
+###
+DELETE {{url}}/
+
+
+
+
